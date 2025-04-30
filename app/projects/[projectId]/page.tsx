@@ -47,13 +47,13 @@ const projects: Project[] = [
 ]
 
 type ProjectPageParams = {
-  params: {
-    projectId: string;
-  };
+  params: Promise<{ projectId: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 };
 
-export default function ProjectDetailPage({ params }: ProjectPageParams) {
-  const project = projects.find((p) => p.id === params.projectId)
+export default async function ProjectDetailPage({ params }: ProjectPageParams) {
+  const { projectId } = await params
+  const project = projects.find((p) => p.id === projectId)
 
   if (!project) {
     notFound()
