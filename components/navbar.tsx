@@ -79,36 +79,9 @@ export function Navbar() {
           Projects
         </Link>
 
-        <div className="relative group" ref={aboutRef}>
-          <button
-            className="flex items-center text-black hover:text-gray-600 font-medium"
-            onClick={() => setAboutOpen(!aboutOpen)}
-          >
-            About <ChevronDown className="ml-1 h-4 w-4" />
-          </button>
-          {aboutOpen && (
-            <div className="absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-md py-2 z-50 border border-gray-200">
-              <Link
-                href="/about/company"
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-              >
-                Our Company
-              </Link>
-              <Link
-                href="/about/team"
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-              >
-                Our Team
-              </Link>
-              <Link
-                href="/about/history"
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-              >
-                History
-              </Link>
-            </div>
-          )}
-        </div>
+        <Link href="/about" className="text-black hover:text-gray-600 font-medium">
+          About
+        </Link>
 
         <Link href="/press" className="text-black hover:text-gray-600 font-medium">
           Press

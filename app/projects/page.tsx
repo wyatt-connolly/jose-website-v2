@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { ProjectGallery } from "@/components/project-gallery"
 import { ProcessSection } from "@/components/process-section"
-import { ContactForm } from "@/components/contact-form"
 
 export default function ProjectsPage() {
   return (
@@ -44,9 +43,7 @@ export default function ProjectsPage() {
 
       <ProcessSection />
 
-      <div className="bg-gray-100">
-        <ContactForm />
-      </div>
+   
     </main>
   )
 }
