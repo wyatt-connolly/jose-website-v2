@@ -2,6 +2,17 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
+// Define the Project interface
+interface Project {
+  id: string
+  title: string
+  category: string[]
+  image: string
+  description: string
+  fullDescription?: string
+  gallery?: string[]
+}
+
 const projects: Project[] = [
   {
     id: "modern-house-renovation",
@@ -35,22 +46,13 @@ const projects: Project[] = [
   // Additional project details would be added here for all projects
 ]
 
-interface Project {
-  id: string
-  title: string
-  category: string[]
-  image: string
-  description: string
-  fullDescription?: string
-  gallery?: string[]
+// Type definition for page props in Next.js App Router
+type Props = {
+  params: { projectId: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-// Update the params typing to match Next.js App Router requirements
-export default function ProjectDetailPage({
-  params,
-}: {
-  params: { projectId: string }
-}) {
+export default function ProjectDetailPage({ params }: Props) {
   const project = projects.find((p) => p.id === params.projectId)
 
   if (!project) {
