@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronDown } from "lucide-react"
@@ -9,6 +9,25 @@ export function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const servicesRef = useRef<HTMLDivElement>(null)
+  const aboutRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setServicesOpen(false)
+      }
+      if (aboutRef.current && !aboutRef.current.contains(event.target as Node)) {
+        setAboutOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   return (
     <nav className="w-full bg-white py-4 px-6 flex items-center justify-between">
@@ -25,7 +44,7 @@ export function Navbar() {
           Home
         </Link>
 
-        <div className="relative group">
+        <div className="relative group" ref={servicesRef}>
           <button
             className="flex items-center text-black hover:text-gray-600 font-medium"
             onClick={() => setServicesOpen(!servicesOpen)}
@@ -33,14 +52,23 @@ export function Navbar() {
             Services <ChevronDown className="ml-1 h-4 w-4" />
           </button>
           {servicesOpen && (
-            <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-10">
-              <Link href="/services/residential" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            <div className="absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-md py-2 z-50 border border-gray-200">
+              <Link
+                href="/services/residential"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
                 Residential
               </Link>
-              <Link href="/services/commercial" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              <Link
+                href="/services/commercial"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
                 Commercial
               </Link>
-              <Link href="/services/renovation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              <Link
+                href="/services/renovation"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
                 Renovation
               </Link>
             </div>
@@ -51,7 +79,7 @@ export function Navbar() {
           Projects
         </Link>
 
-        <div className="relative group">
+        <div className="relative group" ref={aboutRef}>
           <button
             className="flex items-center text-black hover:text-gray-600 font-medium"
             onClick={() => setAboutOpen(!aboutOpen)}
@@ -59,14 +87,23 @@ export function Navbar() {
             About <ChevronDown className="ml-1 h-4 w-4" />
           </button>
           {aboutOpen && (
-            <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-10">
-              <Link href="/about/company" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            <div className="absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-md py-2 z-50 border border-gray-200">
+              <Link
+                href="/about/company"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
                 Our Company
               </Link>
-              <Link href="/about/team" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              <Link
+                href="/about/team"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
                 Our Team
               </Link>
-              <Link href="/about/history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              <Link
+                href="/about/history"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
                 History
               </Link>
             </div>
