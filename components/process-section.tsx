@@ -11,7 +11,7 @@ export function ProcessSection() {
 
         <p className="text-center text-gray-700 max-w-4xl mx-auto mb-16">
           We understand that building or remodeling your home can be a daunting task, which is why we have streamlined
-          our process to ensure that it is as smooth and stress-free as possible. Here's how it works:
+          our process to ensure that it is as smooth and stress-free as possible. Here&apos;s how it works:
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -43,7 +43,7 @@ export function ProcessSection() {
             </div>
             <h3 className="text-xl font-bold mb-3">Consultation</h3>
             <p className="text-gray-700">
-              We'll schedule a consultation to discuss your vision, goals, and budget for your project.
+              We&apos;ll schedule a consultation to discuss your vision, goals, and budget for your project.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export function ProcessSection() {
             </div>
             <h3 className="text-xl font-bold mb-3">Design</h3>
             <p className="text-gray-700">
-              We'll schedule a consultation to discuss your vision, goals, and budget for your project.
+              We&apos;ll schedule a consultation to discuss your vision, goals, and budget for your project.
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export function ProcessSection() {
             </div>
             <h3 className="text-xl font-bold mb-3">Completion</h3>
             <p className="text-gray-700">
-              We'll schedule a consultation to discuss your vision, goals, and budget for your project.
+              We&apos;ll schedule a consultation to discuss your vision, goals, and budget for your project.
             </p>
           </div>
         </div>

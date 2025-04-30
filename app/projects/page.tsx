@@ -17,12 +17,12 @@ export default function ProjectsPage() {
         <div className="text-center mb-10">
           <p className="text-lg text-gray-700 max-w-4xl mx-auto">
             We invite you to browse our expansive gallery, showcasing the superior construction and remodeling work
-            we've accomplished for our diverse clientele throughout San Diego. Our portfolio offers a comprehensive view
+            we&apos;ve accomplished for our diverse clientele throughout San Diego. Our portfolio offers a comprehensive view
             into our varied projects, illustrating our expertise in multiple domains.
           </p>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mt-4">
-            You'll find examples of custom homes we've meticulously crafted from the ground up, the embodiment of our
-            clients' dreams realized in brick and mortar; we also feature extensive home additions, where we've
+            You&apos;ll find examples of custom homes weve meticulously crafted from the ground up, the embodiment of our
+            clients&apos; dreams realized in brick and mortar; we also feature extensive home additions, where we&apos;ve
             seamlessly integrated new spaces into existing structures, enhancing functionality while respecting the
             original architectural style.
           </p>

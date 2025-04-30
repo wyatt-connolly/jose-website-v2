@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useRef } from "react"
 
 export function VideoHero() {
@@ -39,12 +40,12 @@ export function VideoHero() {
             Quality construction services for residential and commercial projects
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/projects"
               className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 rounded-md font-medium text-lg transition-colors"
             >
               View Our Projects
-            </a>
+            </Link>
             <a
               href="/contact"
               className="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-3 rounded-md font-medium text-lg transition-colors"
