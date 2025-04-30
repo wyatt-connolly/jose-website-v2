@@ -8,6 +8,7 @@ import { ChevronDown } from "lucide-react"
 export function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <nav className="w-full bg-white py-4 px-6 flex items-center justify-between">
@@ -90,7 +91,7 @@ export function Navbar() {
         </a>
       </div>
 
-      <button className="md:hidden">
+      <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -101,6 +102,70 @@ export function Navbar() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="absolute top-16 left-0 right-0 bg-white shadow-md z-50 md:hidden">
+          <div className="flex flex-col p-4">
+            <Link href="/" className="py-2 text-black hover:text-gray-600 font-medium">
+              Home
+            </Link>
+            <button
+              className="flex items-center justify-between py-2 text-black hover:text-gray-600 font-medium"
+              onClick={() => setServicesOpen(!servicesOpen)}
+            >
+              Services <ChevronDown className="ml-1 h-4 w-4" />
+            </button>
+            {servicesOpen && (
+              <div className="pl-4">
+                <Link href="/services/residential" className="block py-2 text-sm text-gray-700 hover:text-gray-900">
+                  Residential
+                </Link>
+                <Link href="/services/commercial" className="block py-2 text-sm text-gray-700 hover:text-gray-900">
+                  Commercial
+                </Link>
+                <Link href="/services/renovation" className="block py-2 text-sm text-gray-700 hover:text-gray-900">
+                  Renovation
+                </Link>
+              </div>
+            )}
+            <Link href="/projects" className="py-2 text-black hover:text-gray-600 font-medium">
+              Projects
+            </Link>
+            <button
+              className="flex items-center justify-between py-2 text-black hover:text-gray-600 font-medium"
+              onClick={() => setAboutOpen(!aboutOpen)}
+            >
+              About <ChevronDown className="ml-1 h-4 w-4" />
+            </button>
+            {aboutOpen && (
+              <div className="pl-4">
+                <Link href="/about/company" className="block py-2 text-sm text-gray-700 hover:text-gray-900">
+                  Our Company
+                </Link>
+                <Link href="/about/team" className="block py-2 text-sm text-gray-700 hover:text-gray-900">
+                  Our Team
+                </Link>
+                <Link href="/about/history" className="block py-2 text-sm text-gray-700 hover:text-gray-900">
+                  History
+                </Link>
+              </div>
+            )}
+            <Link href="/press" className="py-2 text-black hover:text-gray-600 font-medium">
+              Press
+            </Link>
+            <Link href="/contact" className="py-2 text-black hover:text-gray-600 font-medium">
+              Contact
+            </Link>
+            <a
+              href="tel:+18583488585"
+              className="mt-2 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded text-center transition-colors"
+            >
+              Call (858) 348-8585
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }
