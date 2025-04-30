@@ -45,7 +45,13 @@ const projects: Project[] = [
   // Additional project details would be added here for all projects
 ]
 
-export default function ProjectDetailPage({ params }: { params: { projectId: string } }) {
+interface PageProps {
+  params: {
+    projectId: string
+  }
+}
+
+export default function ProjectDetailPage({ params }: PageProps) {
   const project = projects.find((p) => p.id === params.projectId)
 
   if (!project) {
