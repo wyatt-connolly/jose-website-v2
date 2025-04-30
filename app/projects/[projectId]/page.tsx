@@ -45,13 +45,13 @@ const projects: Project[] = [
   // Additional project details would be added here for all projects
 ]
 
-interface PageProps {
+interface ProjectPageProps {
   params: {
     projectId: string
   }
 }
 
-export default function ProjectDetailPage({ params }: PageProps) {
+export default function ProjectDetailPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.id === params.projectId)
 
   if (!project) {
