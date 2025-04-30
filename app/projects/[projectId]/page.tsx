@@ -2,16 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
-interface Project {
-  id: string
-  title: string
-  category: string[]
-  image: string
-  description: string
-  fullDescription?: string
-  gallery?: string[]
-}
-
 const projects: Project[] = [
   {
     id: "modern-house-renovation",
@@ -45,13 +35,22 @@ const projects: Project[] = [
   // Additional project details would be added here for all projects
 ]
 
-interface ProjectPageProps {
-  params: {
-    projectId: string
-  }
+interface Project {
+  id: string
+  title: string
+  category: string[]
+  image: string
+  description: string
+  fullDescription?: string
+  gallery?: string[]
 }
 
-export default function ProjectDetailPage({ params }: ProjectPageProps) {
+// Update the params typing to match Next.js App Router requirements
+export default function ProjectDetailPage({
+  params,
+}: {
+  params: { projectId: string }
+}) {
   const project = projects.find((p) => p.id === params.projectId)
 
   if (!project) {
