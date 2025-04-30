@@ -14,7 +14,7 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
+    {
     id: "modern-house-renovation",
     title: "Modern House Renovation",
     category: ["house"],
@@ -46,13 +46,13 @@ const projects: Project[] = [
   // Additional project details would be added here for all projects
 ]
 
-// Type definition for page props in Next.js App Router
-type Props = {
-  params: { projectId: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+type ProjectPageParams = {
+  params: {
+    projectId: string;
+  };
+};
 
-export default function ProjectDetailPage({ params }: Props) {
+export default function ProjectDetailPage({ params }: ProjectPageParams) {
   const project = projects.find((p) => p.id === params.projectId)
 
   if (!project) {
