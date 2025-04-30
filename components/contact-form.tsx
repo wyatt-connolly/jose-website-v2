@@ -34,7 +34,7 @@ export function ContactForm() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     console.log("Form submitted:", formData)
-    setSubmitMessage("Thank you for your message! We'll be in touch soon.")
+    setSubmitMessage("Thank you for your message! Well be in touch soon.")
     setFormData({
       name: "",
       email: "",

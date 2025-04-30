@@ -75,7 +75,7 @@ export function Testimonials() {
         <div className="grid md:grid-cols-2 gap-8">
           {testimonials.slice(activeIndex, activeIndex + 2).map((testimonial) => (
             <div key={testimonial.id} className="bg-white p-6 rounded-lg shadow-md relative">
-              <div className="text-[#c9b78d] text-6xl font-serif absolute top-4 left-4 opacity-20">"</div>
+              <div className="text-[#c9b78d] text-6xl font-serif absolute top-4 left-4 opacity-20">&apos;</div>
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-200 mr-4">
                   <Image

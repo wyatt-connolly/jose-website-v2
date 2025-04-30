@@ -38,7 +38,7 @@ export function WhoWeAre() {
           <p className="text-gray-700">
             When you choose our all-in-one service, you can rest assured that every aspect of your project will be
             meticulously managed. From the initial consultation to the final touches, we handle every step of the
-            process with utmost care and dedication. Whether you're seeking indoor or exterior projects or renovations,
+            process with utmost care and dedication. Whether you&apos;re seeking indoor or exterior projects or renovations,
             our team possesses the necessary skills and experience to exceed your expectations.
           </p>
 

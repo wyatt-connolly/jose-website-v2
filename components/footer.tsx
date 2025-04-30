@@ -14,7 +14,7 @@ export function Footer() {
             </div>
 
             <p className="text-gray-400 mb-6">
-              We're dedicated to providing our clients with exceptional construction and remodeling services that meet
+              We&apos;re dedicated to providing our clients with exceptional construction and remodeling services that meet
               their unique needs and preferences.
             </p>
 

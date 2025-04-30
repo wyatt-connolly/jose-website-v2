@@ -17,14 +17,14 @@ export function WhyChooseUs() {
           </h3>
 
           <p className="text-gray-700">
-            Building or remodeling your home can be overwhelming, which is why we've simplified our process to make it
+            Building or remodeling your home can be overwhelming, which is why we&apos;ve simplified our process to make it
             as smooth and worry-free as possible. We guide you through every step, from initial consultation and design
-            to project completion, ensuring the result meets and exceeds your expectations. We'll also offer advice on
+            to project completion, ensuring the result meets and exceeds your expectations. We&apos;ll also offer advice on
             how to maintain your newly built or remodeled space to keep it looking fresh and new for years to come.
           </p>
 
           <p className="text-gray-700">
-            Our team of contractors brings years of experience and industry knowledge to every project. We're equipped
+            Our team of contractors brings years of experience and industry knowledge to every project. We&apos;re equipped
             to handle any project and can offer valuable tips on how to navigate common construction challenges and make
             informed decisions that save time and money.
           </p>
